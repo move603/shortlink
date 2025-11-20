@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Analytics</h1>
+    <div class="grid">
+      <div>
+        <label>Link Code</label>
+        <input type="text" id="code" placeholder="enter code" />
+      </div>
+      <div>
+        <label>From</label>
+        <input type="date" id="from" />
+      </div>
+      <div>
+        <label>To</label>
+        <input type="date" id="to" />
+      </div>
+      <div>
+        <label>Country</label>
+        <input type="text" id="country" />
+      </div>
+      <div>
+        <label>Device</label>
+        <input type="text" id="device" />
+      </div>
+    </div>
+    <button id="load">Load Analytics</button>
+    <div class="grid">
+      <canvas id="chartClicks"></canvas>
+      <canvas id="chartCountries"></canvas>
+    </div>
+    <div id="stats" class="result"></div>
+  </div>
+  <script>window.API_BASE = location.origin;</script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

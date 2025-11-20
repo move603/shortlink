@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shortlinker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Secure Link Shortener</h1>
+    <form id="create-form">
+      <label>Destination URL</label>
+      <input type="url" id="url" placeholder="https://example.com" required />
+
+      <label>Custom Alias (optional)</label>
+      <input type="text" id="alias" placeholder="my-custom-link" />
+
+      <div class="grid">
+        <div>
+          <label>Expires In</label>
+          <select id="expiresIn">
+            <option value="">None</option>
+            <option value="5">5 minutes</option>
+            <option value="10">10 minutes</option>
+            <option value="60">1 hour</option>
+          </select>
+        </div>
+        <div>
+          <label>Expires At</label>
+          <input type="datetime-local" id="expiresAt" />
+        </div>
+      </div>
+
+      <label>On Expiry</label>
+      <select id="expireAction">
+        <option value="MESSAGE">Show message</option>
+        <option value="DELETE">Auto-delete</option>
+      </select>
+
+      <label>Expiry Message</label>
+      <input type="text" id="expireMessage" placeholder="This link has expired" />
+
+      <label>Password (optional)</label>
+      <input type="password" id="password" placeholder="Protect your link" />
+
+      <button type="submit">Create Short Link</button>
+    </form>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>window.API_BASE = location.origin;</script>
+  <script src="app.js"></script>
+</body>
+</html>
