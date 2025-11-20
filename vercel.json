@@ -1,16 +1,4 @@
 {
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/([A-Za-z0-9_-]+)$", "dest": "/api/[code]?code=$1" },
-    { "src": "/(.*)", "dest": "/public/$1" }
-  ]
-}
-{
   "version": 2,
   "builds": [
     {
