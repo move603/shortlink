@@ -4,7 +4,11 @@
   "private": true,
   "description": "Secure link shortener with analytics and expiry control",
   "scripts": {
-    "vercel-build": "prisma generate && node prisma-migrate.js"
+    "vercel-build": "prisma generate && node prisma-migrate.js",
+    "postinstall": "prisma generate && prisma migrate deploy"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
     "@prisma/client": "^5.18.0",
